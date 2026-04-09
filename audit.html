@@ -1,1 +1,508 @@
-{"id":"/audit.html","path":"/audit.html","sha":"d58f9ebb77248cb210674ff17eda2987c9229ca5","mime_type":"text/html","size":22267,"site_id":"f29fbc33-c8f0-4ac2-9c9c-b6b265c1e4b9","deploy_id":"69c08534fd19e245fa8ece43"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Business Health Score | SCV Reviews</title>
+<meta name="description" content="Get your free business health score. See how your Google reviews, website, and online presence stack up against your Santa Clarita competitors.">
+<meta property="og:title" content="Free Business Health Score | SCV Reviews">
+<meta property="og:description" content="See how your Google reviews, website, and follow-up speed compare to your local competitors. Free score in 60 seconds.">
+<meta property="og:image" content="https://connorwithhonor.com/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="https://connorwithhonor.com/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://connorwithhonor.com/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://connorwithhonor.com/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a28;
+--gold:#f5c518;--gold-dim:#c9a30e;--cyan:#00e5ff;--red:#ff3344;--green:#00e676;
+--text:#e8e8f0;--text-dim:#8888aa;--text-bright:#ffffff;
+--border:#2a2a3a;
+--font:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;overflow-x:hidden}
+
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);
+background-size:60px 60px}
+
+/* NAV */
+nav{position:relative;z-index:10;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.nav-brand{font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+.nav-brand span{color:var(--gold)}
+.nav-back{color:var(--text-dim);font-size:.85rem;font-weight:500;text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--cyan)}
+
+/* MAIN */
+.main{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:3rem 1.5rem 5rem}
+
+/* STEP INDICATOR */
+.steps{display:flex;gap:.5rem;margin-bottom:2.5rem}
+.step-dot{width:100%;height:4px;border-radius:4px;background:var(--bg3);transition:background .4s}
+.step-dot.active{background:var(--cyan)}
+.step-dot.done{background:var(--gold)}
+
+/* HEADINGS */
+h1{font-size:1.8rem;font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:.5rem}
+.subtitle{font-size:1rem;color:var(--text-dim);margin-bottom:2rem;line-height:1.6}
+
+/* FORM */
+.form-group{margin-bottom:1.25rem}
+label{display:block;font-size:.8rem;color:var(--text-dim);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+input,select{width:100%;padding:.85rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text-bright);font-family:var(--font);font-size:.95rem;transition:border-color .2s;outline:none}
+input:focus,select:focus{border-color:var(--cyan)}
+input::placeholder{color:var(--text-dim)}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238888aa' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+select option{background:var(--bg2);color:var(--text)}
+
+.btn{width:100%;padding:.95rem;border:none;border-radius:8px;font-family:var(--font);font-weight:700;font-size:1rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.btn-gold{background:var(--gold);color:var(--bg)}
+.btn-gold:hover{background:var(--text-bright);transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,197,24,.2)}
+.btn-cyan{background:var(--cyan);color:var(--bg)}
+.btn-cyan:hover{background:var(--text-bright);transform:translateY(-2px)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important}
+
+/* SCORE DISPLAY */
+.score-container{display:none;text-align:center;padding:2rem 0}
+.score-ring{position:relative;width:200px;height:200px;margin:0 auto 2rem}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring circle{fill:none;stroke-width:8}
+.score-bg{stroke:var(--bg3)}
+.score-fill{stroke:var(--gold);stroke-linecap:round;transition:stroke-dashoffset 2s ease-out,stroke 1s}
+.score-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--mono);font-size:3.5rem;font-weight:700;color:var(--text-bright)}
+.score-label{font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.12em;position:absolute;top:65%;left:50%;transform:translateX(-50%)}
+
+.grade{font-size:1.4rem;font-weight:700;margin-bottom:1.5rem}
+.grade .letter{font-size:2rem;font-family:var(--mono)}
+
+/* BREAKDOWN */
+.breakdown{text-align:left;margin:2rem 0}
+.breakdown-item{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.breakdown-label{font-size:.9rem;color:var(--text-dim)}
+.breakdown-score{font-family:var(--mono);font-weight:700;font-size:.9rem;padding:.25rem .6rem;border-radius:4px}
+.score-good{color:var(--green);background:rgba(0,230,118,.1)}
+.score-warn{color:var(--gold);background:rgba(245,197,24,.1)}
+.score-bad{color:var(--red);background:rgba(255,51,68,.1)}
+
+/* LOCKED SECTION */
+.locked{position:relative;margin:2rem 0;padding:2rem;background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.locked-overlay{position:absolute;inset:0;background:linear-gradient(transparent,var(--bg2) 40%);z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:2rem}
+.locked-items{filter:blur(6px);opacity:.4}
+.locked-items p{font-size:.85rem;color:var(--text-dim);margin-bottom:.5rem}
+.lock-icon{font-size:2rem;margin-bottom:.75rem}
+.lock-text{font-size:1rem;font-weight:700;color:var(--text-bright);text-align:center;margin-bottom:.25rem}
+.lock-sub{font-size:.85rem;color:var(--text-dim);text-align:center;margin-bottom:1rem;max-width:350px}
+
+/* CTA BOX */
+.cta-box{background:var(--bg2);border:2px solid var(--gold);border-radius:12px;padding:2rem;text-align:center;margin-top:2rem}
+.cta-price{font-size:2.5rem;font-weight:900;color:var(--gold);margin-bottom:.25rem}
+.cta-credit{font-size:.85rem;color:var(--cyan);margin-bottom:1rem}
+.cta-details{font-size:.85rem;color:var(--text-dim);line-height:1.7;margin-bottom:1.5rem}
+
+/* COMPETITOR PREVIEW */
+.competitor-preview{text-align:left;margin:1.5rem 0;padding:1rem;background:rgba(255,51,68,.05);border:1px solid rgba(255,51,68,.15);border-radius:8px}
+.competitor-preview h4{font-size:.8rem;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.comp-row{display:flex;justify-content:space-between;font-size:.85rem;padding:.3rem 0}
+.comp-name{color:var(--text-dim)}
+.comp-reviews{font-family:var(--mono);color:var(--text-bright);font-weight:600}
+
+/* HIDE/SHOW */
+.hidden{display:none!important}
+
+/* SPINNER */
+.spinner{display:inline-block;width:20px;height:20px;border:2px solid rgba(10,10,15,.3);border-top-color:var(--bg);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.fine-print{font-size:.7rem;color:var(--text-dim);text-align:center;margin-top:1rem;line-height:1.6}
+
+/* FOOTER */
+footer{position:relative;z-index:1;text-align:center;padding:2rem;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--text-dim)}
+footer a{color:var(--cyan)}
+
+@media(max-width:600px){
+.main{padding:2rem 1rem 4rem}
+h1{font-size:1.5rem}
+.score-ring{width:160px;height:160px}
+.score-num{font-size:2.8rem}
+}
+</style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"><meta property="og:image" content="https://scvreviews.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://scvreviews.com/og-image.png"></head>
+<body>
+
+<div class="grid-bg"></div>
+
+<nav>
+<div class="nav-brand">SCV<span>Reviews</span></div>
+<a href="https://scvreviews.com" class="nav-back">< Back to SCVReviews.com</a>
+</nav>
+
+<div class="main">
+
+<!-- STEP DOTS -->
+<div class="steps">
+<div class="step-dot active" id="dot1"></div>
+<div class="step-dot" id="dot2"></div>
+<div class="step-dot" id="dot3"></div>
+</div>
+
+<!-- STEP 1: INPUT -->
+<div id="step1">
+<h1>Get Your Business Health Score</h1>
+<p class="subtitle">See how your online presence stacks up against your local competitors. Takes 60 seconds. No login required.</p>
+
+<div class="form-group">
+<label>Business Name</label>
+<input type="text" id="bizName" placeholder="e.g. Valley Dental Care">
+</div>
+
+<div class="form-group">
+<label>Industry</label>
+<select id="bizIndustry">
+<option value="">Select your industry</option>
+<option value="dental">Dentist / Dental Office</option>
+<option value="hvac">HVAC / Air Conditioning</option>
+<option value="plumbing">Plumbing</option>
+<option value="roofing">Roofing</option>
+<option value="medspa">Med Spa / Aesthetics</option>
+<option value="legal">Legal / Attorney</option>
+<option value="auto">Auto Repair / Detailing</option>
+<option value="salon">Hair Salon / Barbershop</option>
+<option value="fitness">Gym / Fitness Studio</option>
+<option value="restaurant">Restaurant / Food Service</option>
+<option value="other">Other Local Service</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>City</label>
+<select id="bizCity">
+<option value="">Select your area</option>
+<option value="Valencia">Valencia</option>
+<option value="Santa Clarita">Santa Clarita</option>
+<option value="Canyon Country">Canyon Country</option>
+<option value="Saugus">Saugus</option>
+<option value="Newhall">Newhall</option>
+<option value="Stevenson Ranch">Stevenson Ranch</option>
+<option value="Castaic">Castaic</option>
+<option value="Other">Other SCV Area</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Approximate Google Review Count</label>
+<select id="bizReviews">
+<option value="">How many Google reviews do you have?</option>
+<option value="0">0 - 10 reviews</option>
+<option value="1">11 - 30 reviews</option>
+<option value="2">31 - 75 reviews</option>
+<option value="3">76 - 150 reviews</option>
+<option value="4">151 - 300 reviews</option>
+<option value="5">300+ reviews</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Google Star Rating</label>
+<select id="bizRating">
+<option value="">What is your current rating?</option>
+<option value="1">Below 3.5 stars</option>
+<option value="2">3.5 - 3.9 stars</option>
+<option value="3">4.0 - 4.4 stars</option>
+<option value="4">4.5 - 4.7 stars</option>
+<option value="5">4.8 - 5.0 stars</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Do you have online booking on your website?</label>
+<select id="bizBooking">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Does your website have a chat widget or AI assistant?</label>
+<select id="bizChat">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>When someone fills out your contact form, how fast do they get a response?</label>
+<select id="bizResponse">
+<option value="">Select</option>
+<option value="3">Under 5 minutes (automated)</option>
+<option value="2">Within an hour (staff responds)</option>
+<option value="1">Within a day</option>
+<option value="0">We do not have a contact form / I am not sure</option>
+</select>
+</div>
+
+<button class="btn btn-gold" id="scoreBtn" onclick="calculateScore()">
+Get My Score >
+</button>
+</div>
+
+<!-- STEP 2: SCORE RESULTS -->
+<div id="step2" class="hidden">
+<div class="score-container" style="display:block">
+<h1 id="resultTitle"></h1>
+<p class="subtitle" id="resultSub"></p>
+
+<div class="score-ring">
+<svg viewBox="0 0 200 200" width="200" height="200">
+<circle class="score-bg" cx="100" cy="100" r="88"/>
+<circle class="score-fill" id="scoreCircle" cx="100" cy="100" r="88"
+stroke-dasharray="553" stroke-dashoffset="553"/>
+</svg>
+<div class="score-num" id="scoreNumber">0</div>
+<div class="score-label">out of 100</div>
+</div>
+
+<div class="grade" id="gradeDisplay"></div>
+
+<!-- BREAKDOWN -->
+<div class="breakdown">
+<div class="breakdown-item">
+<span class="breakdown-label">Google Review Volume</span>
+<span class="breakdown-score" id="bk-reviews"></span>
+</div>
+<div class="breakdown-item">
+<span class="breakdown-label">Star Rating</span>
+<span class="breakdown-score" id="bk-rating"></span>
+</div>
+<div class="breakdown-item">
+<span class="breakdown-label">Online Booking</span>
+<span class="breakdown-score" id="bk-booking"></span>
+</div>
+<div class="breakdown-item">
+<span class="breakdown-label">Chat / AI Assistant</span>
+<span class="breakdown-score" id="bk-chat"></span>
+</div>
+<div class="breakdown-item">
+<span class="breakdown-label">Lead Response Speed</span>
+<span class="breakdown-score" id="bk-response"></span>
+</div>
+</div>
+
+<!-- COMPETITOR PREVIEW (teaser) -->
+<div class="competitor-preview" id="compPreview">
+<h4>Your Top Competitors Are Beating You</h4>
+<div id="compRows"></div>
+</div>
+
+<!-- LOCKED SECTION -->
+<div class="locked">
+<div class="locked-items">
+<p>Detailed competitive analysis with specific competitor names, review counts, and ratings</p>
+<p>Website speed and mobile optimization score</p>
+<p>Google Business Profile optimization checklist</p>
+<p>Specific action items ranked by revenue impact</p>
+<p>Response time benchmark vs industry average</p>
+<p>Review velocity trend (are you gaining or losing ground?)</p>
+<p>Estimated monthly revenue you are leaving on the table</p>
+</div>
+<div class="locked-overlay">
+<div class="lock-icon">&#128274;</div>
+<div class="lock-text">Full Report Locked</div>
+<div class="lock-sub">Unlock your complete competitive analysis, action plan, and revenue impact estimate with a 20-minute Zoom audit.</div>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+<div class="cta-price">$97</div>
+<div class="cta-credit">100% credited to your first month if you sign up within 14 days</div>
+<p class="cta-details">Book a 20-minute Zoom audit. We walk through your full report live, show you exactly where you are losing revenue, and give you a custom action plan. If you become a client, the $97 is applied to your setup fee.</p>
+<a href="https://calendly.com/connorwithhonor/scvreviews-audit" class="btn btn-gold" target="_blank" rel="noopener">
+Book My $97 Audit >
+</a>
+<p class="fine-print">Audit fee collected after booking confirmation. 100% applied to setup if you become a client within 14 days. No contracts. No pressure.</p>
+</div>
+
+<!-- CONTACT CAPTURE -->
+<div style="margin-top:2rem;padding:1.5rem;background:var(--bg3);border-radius:8px;text-align:center">
+<p style="font-size:.9rem;color:var(--text-dim);margin-bottom:1rem">Want us to email you this score report?</p>
+<div style="display:flex;gap:.5rem;max-width:400px;margin:0 auto">
+<input type="email" id="captureEmail" placeholder="your@email.com" style="flex:1">
+<button class="btn btn-cyan" style="width:auto;padding:.85rem 1.25rem;font-size:.85rem" onclick="captureEmail()">Send</button>
+</div>
+<p id="captureMsg" class="fine-print" style="margin-top:.5rem"></p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>SCV Reviews | AI-Powered Reputation Management for Santa Clarita Valley<br>
+<a href="https://scvreviews.com">scvreviews.com</a> | <a href="tel:6614001720">661-400-1720</a> | <a href="mailto:connor@scvreviews.com">connor@scvreviews.com</a><br><br>
+Coded by Connor with Honor | <a href="https://honorelevate.com">AI Growth Architect</a></p>
+</footer>
+
+<script>
+const competitors = {
+  dental: [
+    {name:'Top SCV Dental Office #1', reviews:'1,060 reviews | 5.0 ★'},
+    {name:'Top SCV Dental Office #2', reviews:'725 reviews | 5.0 ★'},
+    {name:'Top SCV Dental Office #3', reviews:'555 reviews | 4.9 ★'}
+  ],
+  hvac: [
+    {name:'Top SCV HVAC Company #1', reviews:'850+ reviews | 4.9 ★'},
+    {name:'Top SCV HVAC Company #2', reviews:'400+ reviews | 4.8 ★'},
+    {name:'Top SCV HVAC Company #3', reviews:'275+ reviews | 4.7 ★'}
+  ],
+  plumbing: [
+    {name:'Top SCV Plumber #1', reviews:'600+ reviews | 4.9 ★'},
+    {name:'Top SCV Plumber #2', reviews:'350+ reviews | 4.8 ★'},
+    {name:'Top SCV Plumber #3', reviews:'200+ reviews | 4.7 ★'}
+  ],
+  medspa: [
+    {name:'Top SCV Med Spa #1', reviews:'500+ reviews | 4.9 ★'},
+    {name:'Top SCV Med Spa #2', reviews:'300+ reviews | 4.8 ★'},
+    {name:'Top SCV Med Spa #3', reviews:'180+ reviews | 4.7 ★'}
+  ],
+  default: [
+    {name:'Top Local Competitor #1', reviews:'500+ reviews | 4.9 ★'},
+    {name:'Top Local Competitor #2', reviews:'300+ reviews | 4.8 ★'},
+    {name:'Top Local Competitor #3', reviews:'150+ reviews | 4.7 ★'}
+  ]
+};
+
+function calculateScore(){
+  const name = document.getElementById('bizName').value.trim();
+  const industry = document.getElementById('bizIndustry').value;
+  const city = document.getElementById('bizCity').value;
+  const reviews = parseInt(document.getElementById('bizReviews').value);
+  const rating = parseInt(document.getElementById('bizRating').value);
+  const booking = parseInt(document.getElementById('bizBooking').value);
+  const chat = parseInt(document.getElementById('bizChat').value);
+  const response = parseInt(document.getElementById('bizResponse').value);
+
+  if(!name||!industry||!city||isNaN(reviews)||isNaN(rating)||isNaN(booking)||isNaN(chat)||isNaN(response)){
+    alert('Please fill out all fields to get your score.');
+    return;
+  }
+
+  // Score calculation (weighted)
+  const reviewScore = Math.min(reviews * 4, 20); // 0-20 points
+  const ratingScore = rating * 4; // 0-20 points
+  const bookingScore = booking * 15; // 0 or 15 points
+  const chatScore = chat * 15; // 0 or 15 points
+  const responseScore = response * 10; // 0-30 points
+
+  const total = reviewScore + ratingScore + bookingScore + chatScore + responseScore;
+
+  // Update step dots
+  document.getElementById('dot1').className = 'step-dot done';
+  document.getElementById('dot2').className = 'step-dot active';
+
+  // Hide step 1, show step 2
+  document.getElementById('step1').classList.add('hidden');
+  document.getElementById('step2').classList.remove('hidden');
+
+  // Title
+  const titleEl = document.getElementById('resultTitle');
+  const subEl = document.getElementById('resultSub');
+  if(total >= 75){
+    titleEl.textContent = name + ', you are in good shape.';
+    subEl.textContent = 'But good is not great. Your competitors are investing in automation right now. Here is where you can level up.';
+  } else if(total >= 45){
+    titleEl.textContent = name + ', you are leaving money on the table.';
+    subEl.textContent = 'Your online presence has gaps that are sending potential customers to your competitors every day. Here is where you stand.';
+  } else {
+    titleEl.textContent = name + ', this needs attention.';
+    subEl.textContent = 'Your competitors are significantly outperforming you online. Every day this stays unfixed costs you revenue.';
+  }
+
+  // Animate score ring
+  const circle = document.getElementById('scoreCircle');
+  const circumference = 2 * Math.PI * 88; // ~553
+  const offset = circumference - (total / 100) * circumference;
+  setTimeout(()=>{
+    circle.style.strokeDashoffset = offset;
+    if(total >= 75) circle.style.stroke = '#00e676';
+    else if(total >= 45) circle.style.stroke = '#f5c518';
+    else circle.style.stroke = '#ff3344';
+  }, 300);
+
+  // Animate number
+  let current = 0;
+  const numEl = document.getElementById('scoreNumber');
+  const interval = setInterval(()=>{
+    current++;
+    numEl.textContent = current;
+    if(current >= total) clearInterval(interval);
+  }, 20);
+
+  // Grade
+  const gradeEl = document.getElementById('gradeDisplay');
+  let letter, color;
+  if(total >= 85){letter='A';color='var(--green)'}
+  else if(total >= 70){letter='B';color='var(--green)'}
+  else if(total >= 55){letter='C';color='var(--gold)'}
+  else if(total >= 35){letter='D';color='var(--gold)'}
+  else{letter='F';color='var(--red)'}
+  gradeEl.innerHTML = 'Overall Grade: <span class="letter" style="color:'+color+'">'+letter+'</span>';
+
+  // Breakdown scores
+  function setBreakdown(id, val, max){
+    const el = document.getElementById(id);
+    const pct = (val/max)*100;
+    if(pct >= 70){el.textContent=Math.round(pct)+'%';el.className='breakdown-score score-good'}
+    else if(pct >= 40){el.textContent=Math.round(pct)+'%';el.className='breakdown-score score-warn'}
+    else{el.textContent=Math.round(pct)+'%';el.className='breakdown-score score-bad'}
+  }
+  setBreakdown('bk-reviews', reviewScore, 20);
+  setBreakdown('bk-rating', ratingScore, 20);
+  setBreakdown('bk-booking', bookingScore, 15);
+  setBreakdown('bk-chat', chatScore, 15);
+  setBreakdown('bk-response', responseScore, 30);
+
+  // Competitor preview
+  const compData = competitors[industry] || competitors.default;
+  const compRows = document.getElementById('compRows');
+  compRows.innerHTML = '';
+  compData.forEach(c=>{
+    compRows.innerHTML += '<div class="comp-row"><span class="comp-name">'+c.name+'</span><span class="comp-reviews">'+c.reviews+'</span></div>';
+  });
+
+  // Scroll to top
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function captureEmail(){
+  const email = document.getElementById('captureEmail').value.trim();
+  const msg = document.getElementById('captureMsg');
+  if(!email || !email.includes('@')){
+    msg.textContent = 'Please enter a valid email.';
+    msg.style.color = 'var(--red)';
+    return;
+  }
+  // In production, this would POST to GHL webhook or Formspree
+  msg.textContent = 'Score report sent! Check your inbox.';
+  msg.style.color = 'var(--green)';
+  document.getElementById('captureEmail').value = '';
+
+  // You can wire this to a GHL webhook:
+  // fetch('https://services.leadconnectorhq.com/hooks/WEBHOOK_ID', {
+  //   method: 'POST',
+  //   headers: {'Content-Type':'application/json'},
+  //   body: JSON.stringify({email: email, source: 'scvreviews-audit-tool'})
+  // });
+}
+</script>
+
+</body>
+</html>

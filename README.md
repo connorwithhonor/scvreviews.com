@@ -1,2 +1,0 @@
-# scvreviews.com
-SCVReviews.com

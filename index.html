@@ -1,1 +1,455 @@
-{"id":"/index.html","path":"/index.html","sha":"78ec78706cee9de71b446d3d64c6e198654cc81d","mime_type":"text/html","size":26376,"site_id":"f29fbc33-c8f0-4ac2-9c9c-b6b265c1e4b9","deploy_id":"69c08534fd19e245fa8ece43"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCV Reviews | AI-Powered Reputation & Automation for Santa Clarita Businesses</title>
+<meta name="description" content="Santa Clarita's local AI reputation management and business automation. Automated review collection, voice AI, 24/7 follow-up. Built for SCV businesses by a 27-year local expert.">
+<meta name="keywords" content="Santa Clarita reviews, SCV reputation management, Google reviews automation, Santa Clarita AI, local business automation, Valencia dentist marketing, Canyon Country business reviews">
+<meta property="og:title" content="SCV Reviews | AI Reputation & Automation for Santa Clarita Businesses">
+<meta property="og:description" content="Stop losing patients to competitors with more Google reviews. Automated reputation management built for SCV businesses.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scvreviews.com">
+<link rel="canonical" href="https://scvreviews.com">
+<link rel="icon" type="image/svg+xml" href="https://connorwithhonor.com/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://connorwithhonor.com/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://connorwithhonor.com/favicon-180.png">
+<link rel="shortcut icon" href="https://connorwithhonor.com/favicon.ico">
+<meta property="og:image" content="https://connorwithhonor.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://connorwithhonor.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a28;
+--gold:#f5c518;--gold-dim:#c9a30e;--cyan:#00e5ff;--red:#ff3344;
+--text:#e8e8f0;--text-dim:#8888aa;--text-bright:#ffffff;
+--border:#2a2a3a;
+--font:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:color .2s}
+a:hover{color:var(--gold)}
+
+/* GRID BACKGROUND */
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);
+background-size:60px 60px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;
+background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);
+display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-weight:800;font-size:1.4rem;letter-spacing:-.02em}
+.nav-brand span{color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{color:var(--text-dim);font-weight:500;font-size:.9rem;transition:color .2s}
+.nav-links a:hover{color:var(--text-bright)}
+.nav-cta{background:var(--gold);color:var(--bg);padding:.55rem 1.2rem;border-radius:6px;font-weight:700;font-size:.85rem;letter-spacing:.02em;transition:all .2s}
+.nav-cta:hover{background:var(--text-bright);color:var(--bg);transform:translateY(-1px)}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:8rem 2rem 4rem}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg3);border:1px solid var(--border);
+padding:.4rem 1rem;border-radius:100px;font-size:.8rem;color:var(--text-dim);margin-bottom:2rem;font-family:var(--mono)}
+.hero-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.5rem}
+.hero h1 .gold{color:var(--gold)}
+.hero h1 .cyan{color:var(--cyan)}
+.hero-sub{font-size:1.15rem;color:var(--text-dim);max-width:600px;line-height:1.7;margin-bottom:2.5rem}
+.hero-stats{display:flex;gap:3rem;margin-bottom:3rem;flex-wrap:wrap}
+.hero-stat{text-align:left}
+.hero-stat .num{font-size:2.2rem;font-weight:800;color:var(--gold);font-family:var(--mono);line-height:1}
+.hero-stat .label{font-size:.75rem;color:var(--text-dim);margin-top:.3rem;text-transform:uppercase;letter-spacing:.08em}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--bg);padding:.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{background:var(--text-bright);transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,197,24,.25)}
+.btn-secondary{background:transparent;color:var(--text);padding:.9rem 2rem;border-radius:8px;font-weight:600;font-size:1rem;border:1px solid var(--border);cursor:pointer;transition:all .25s}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+
+/* SECTION */
+section{position:relative;z-index:1;padding:5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-family:var(--mono);font-size:.75rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
+.section-sub{font-size:1.05rem;color:var(--text-dim);max-width:600px;line-height:1.7;margin-bottom:3rem}
+
+/* PROBLEM SECTION */
+.problems{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.problem-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);opacity:0;transition:opacity .3s}
+.problem-card:hover::before{opacity:1}
+.problem-card:hover{border-color:var(--red);transform:translateY(-3px)}
+.problem-icon{font-size:2rem;margin-bottom:1rem}
+.problem-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--text-bright)}
+.problem-card p{font-size:.9rem;color:var(--text-dim);line-height:1.6}
+
+/* SOLUTION SECTION */
+.solution-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.solution-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2.5rem;transition:all .3s;position:relative}
+.solution-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0;background:linear-gradient(90deg,var(--cyan),var(--gold));opacity:0;transition:opacity .3s}
+.solution-card:hover::before{opacity:1}
+.solution-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.solution-num{font-family:var(--mono);font-size:.7rem;color:var(--cyan);margin-bottom:1rem;letter-spacing:.1em}
+.solution-card h3{font-size:1.2rem;font-weight:700;margin-bottom:.75rem;color:var(--text-bright)}
+.solution-card p{font-size:.9rem;color:var(--text-dim);line-height:1.7}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:900px;margin:0 auto}
+.price-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2.5rem;text-align:center;transition:all .3s;position:relative}
+.price-card.featured{border-color:var(--gold);box-shadow:0 0 60px rgba(245,197,24,.08)}
+.price-card.featured::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+background:var(--gold);color:var(--bg);padding:.3rem 1rem;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.08em}
+.price-tier{font-size:.85rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.price-amount{font-size:3rem;font-weight:900;color:var(--text-bright);line-height:1}
+.price-amount span{font-size:1rem;color:var(--text-dim);font-weight:400}
+.price-period{font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem}
+.price-setup{font-family:var(--mono);font-size:.8rem;color:var(--gold);margin-bottom:1.5rem;padding:.5rem;background:rgba(245,197,24,.08);border-radius:6px}
+.price-features{list-style:none;text-align:left;margin-bottom:2rem}
+.price-features li{padding:.5rem 0;font-size:.9rem;color:var(--text-dim);border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:flex-start;gap:.5rem}
+.price-features li::before{content:'>';color:var(--cyan);font-family:var(--mono);font-weight:700;flex-shrink:0}
+.price-btn{width:100%;padding:.85rem;border-radius:8px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:all .25s}
+.price-btn.gold{background:var(--gold);color:var(--bg)}
+.price-btn.gold:hover{background:var(--text-bright);transform:translateY(-2px)}
+.price-btn.outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.price-btn.outline:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* AUDIT CTA */
+.audit-section{background:linear-gradient(135deg,rgba(245,197,24,.06),rgba(0,229,255,.04));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.audit-box{background:var(--bg);border:2px solid var(--gold);border-radius:16px;padding:3rem;text-align:center;max-width:700px;margin:0 auto;position:relative;overflow:hidden}
+.audit-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+background:radial-gradient(circle at center,rgba(245,197,24,.03),transparent 60%);pointer-events:none}
+.audit-box h2{font-size:1.8rem;font-weight:800;margin-bottom:.75rem;color:var(--text-bright)}
+.audit-price{font-size:2.5rem;font-weight:900;color:var(--gold);margin-bottom:.25rem}
+.audit-credit{font-size:.9rem;color:var(--cyan);margin-bottom:1.5rem}
+.audit-details{font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+
+/* PROOF */
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.proof-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem}
+.proof-stars{color:var(--gold);font-size:1.2rem;margin-bottom:.75rem;letter-spacing:.1em}
+.proof-text{font-size:.9rem;color:var(--text-dim);line-height:1.7;font-style:italic;margin-bottom:1rem}
+.proof-name{font-size:.8rem;color:var(--text-bright);font-weight:600}
+.proof-biz{font-size:.75rem;color:var(--text-dim)}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:1.5rem 0}
+.faq-q{font-weight:700;font-size:1.05rem;color:var(--text-bright);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-family:var(--mono);color:var(--cyan);font-size:1.2rem;transition:transform .3s}
+.faq-q.open::after{transform:rotate(45deg)}
+.faq-a{font-size:.9rem;color:var(--text-dim);line-height:1.7;max-height:0;overflow:hidden;transition:all .4s ease}
+.faq-a.open{max-height:300px;padding-top:1rem}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-brand{font-weight:800;font-size:1.2rem;margin-bottom:.5rem}
+.footer-brand span{color:var(--gold)}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin:1rem 0;flex-wrap:wrap}
+.footer-links a{font-size:.85rem;color:var(--text-dim)}
+.footer-legal{font-size:.75rem;color:var(--text-dim);margin-top:1.5rem;line-height:1.8}
+
+/* STICKY MOBILE CTA */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;padding:.75rem 1rem;background:rgba(10,10,15,.95);backdrop-filter:blur(20px);border-top:1px solid var(--gold)}
+.sticky-cta a{display:block;width:100%;text-align:center;background:var(--gold);color:var(--bg);padding:.8rem;border-radius:8px;font-weight:700;font-size:.95rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+nav{padding:.75rem 1rem}
+.nav-links{display:none}
+.hero{padding:6rem 1.25rem 3rem}
+.hero h1{font-size:2rem}
+.hero-stats{gap:1.5rem}
+.hero-stat .num{font-size:1.6rem}
+section{padding:3rem 1.25rem}
+.pricing-grid{grid-template-columns:1fr}
+.sticky-cta{display:block}
+}
+</style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"><meta property="og:image" content="https://scvreviews.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://scvreviews.com/og-image.png"></head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+<div class="nav-brand">SCV<span>Reviews</span></div>
+<div class="nav-links">
+<a href="#problems">The Problem</a>
+<a href="#solutions">Solutions</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#audit" class="nav-cta">Get Your Audit</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-tag"><span class="dot"></span> Serving Santa Clarita Valley businesses</div>
+<h1>Your competitors have <span class="gold">300+ reviews.</span><br>You have 16.<br><span class="cyan">That is why your phone is not ringing.</span></h1>
+<p class="hero-sub">Automated reputation management and AI-powered follow-up built exclusively for Santa Clarita Valley businesses. More reviews. More patients. More revenue. Without hiring anyone.</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="num">77%</div><div class="label">of patients check reviews<br>before choosing</div></div>
+<div class="hero-stat"><div class="num">60s</div><div class="label">average response time<br>with our AI system</div></div>
+<div class="hero-stat"><div class="num">3x</div><div class="label">review velocity increase<br>in 90 days</div></div>
+</div>
+<div class="hero-ctas">
+<a href="#audit" class="btn-primary">Get Your $97 Business Audit ></a>
+<a href="#solutions" class="btn-secondary">See How It Works</a>
+</div>
+</div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="problems" id="problems">
+<div class="section-inner">
+<div class="section-tag">// the problem</div>
+<h2 class="section-title">You are invisible to patients<br>who are actively searching for you.</h2>
+<p class="section-sub">Every day, potential patients search Google for a dentist, HVAC tech, or med spa in Santa Clarita. They pick whoever has the most reviews, the fastest response, and the easiest booking. If that is not you, it is your competitor.</p>
+<div class="problem-grid">
+<div class="problem-card">
+<div class="problem-icon">&#9733;</div>
+<h3>Not Enough Reviews</h3>
+<p>Google ranks businesses with 100+ reviews above businesses with 20. Your happy patients leave your office and never think about reviewing you. That silence is costing you thousands every month.</p>
+</div>
+<div class="problem-card">
+<div class="problem-icon">&#9888;</div>
+<h3>Negative Reviews Go Nuclear</h3>
+<p>One angry patient posts a 1-star review. With only 30 total reviews, that single post drops your average and pushes you off the first page. You never even saw it coming because nobody is monitoring.</p>
+</div>
+<div class="problem-card">
+<div class="problem-icon">&#9202;</div>
+<h3>Leads Die in Your Inbox</h3>
+<p>Someone fills out your contact form at 8pm. Your office is closed. By morning they have already called the competitor who responded instantly. You never even knew they reached out.</p>
+</div>
+<div class="problem-card">
+<div class="problem-icon">&#9742;</div>
+<h3>Missed Calls = Missed Revenue</h3>
+<p>Every call that goes to voicemail is a patient choosing someone else. No one leaves voicemails anymore. They just call the next result on Google.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solutions">
+<div class="section-inner">
+<div class="section-tag">// the system</div>
+<h2 class="section-title">We automate the reputation and follow-up<br>your front desk cannot keep up with.</h2>
+<p class="section-sub">Everything runs 24/7. No new hires. No extra software to learn. We build it, configure it, and manage it inside a system built specifically for your business.</p>
+<div class="solution-grid">
+<div class="solution-card">
+<div class="solution-num">01 // REVIEWS</div>
+<h3>Automated Review Collection</h3>
+<p>After every appointment, your patient gets a simple text. Happy? They are guided to Google to leave a review in 30 seconds. Unhappy? They are routed to a private feedback form so you can resolve it before it goes public. Your review count climbs every week on autopilot.</p>
+</div>
+<div class="solution-card">
+<div class="solution-num">02 // RESPONSE</div>
+<h3>60-Second Lead Follow-Up</h3>
+<p>When someone contacts your business through your website, Google listing, or Facebook page, our AI responds within 60 seconds. It answers common questions, qualifies the lead, and books them on your calendar. Even at 2am on a Saturday.</p>
+</div>
+<div class="solution-card">
+<div class="solution-num">03 // VOICE</div>
+<h3>AI Voice Agent</h3>
+<p>Every missed call gets an instant text back. Our AI voice agent can answer your phone, respond to FAQs, capture caller information, and route urgent calls to your personal line. Never lose a lead to voicemail again.</p>
+</div>
+<div class="solution-card">
+<div class="solution-num">04 // REACTIVATION</div>
+<h3>Patient Reactivation Campaigns</h3>
+<p>Patients who have not visited in 6+ months get an automated outreach sequence. Personalized. Timed. Relevant. Reactivation campaigns typically recover 15-25% of dormant patients without you lifting a finger.</p>
+</div>
+<div class="solution-card">
+<div class="solution-num">05 // BOOKING</div>
+<h3>Online Booking Automation</h3>
+<p>No more phone tag. Patients book directly from your website, Google listing, or a text link. Confirmations and reminders go out automatically. No-shows drop. Your schedule stays full.</p>
+</div>
+<div class="solution-card">
+<div class="solution-num">06 // REPORTING</div>
+<h3>Monthly Reputation Reports</h3>
+<p>Every month you get a clear report: new reviews collected, average rating trend, response times, leads captured, appointments booked. You see exactly what the system is doing for your business.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="problems" id="pricing">
+<div class="section-inner">
+<div class="section-tag">// pricing</div>
+<h2 class="section-title">Two tiers. One goal.<br>More revenue for your business.</h2>
+<p class="section-sub">Both plans include full setup, configuration, and ongoing management. No contracts. Cancel anytime. Your system keeps working as long as you are a client.</p>
+<div class="pricing-grid">
+<div class="price-card">
+<div class="price-tier">Reputation Engine</div>
+<div class="price-amount">$297<span>/mo</span></div>
+<div class="price-period">Automated reputation management</div>
+<div class="price-setup">$497 one-time setup fee</div>
+<ul class="price-features">
+<li>Automated review requests (SMS + email)</li>
+<li>Positive/negative review routing</li>
+<li>Google review link optimization</li>
+<li>AI chat widget on your website</li>
+<li>Missed call text-back</li>
+<li>Monthly reputation report</li>
+<li>Review monitoring + alerts</li>
+<li>Dedicated SCV-based support</li>
+</ul>
+<a href="#audit" class="price-btn outline">Start With an Audit</a>
+</div>
+<div class="price-card featured">
+<div class="price-tier">Full Automation</div>
+<div class="price-amount">$497<span>/mo</span></div>
+<div class="price-period">Reputation + AI voice + booking</div>
+<div class="price-setup">$497 one-time setup fee</div>
+<ul class="price-features">
+<li>Everything in Reputation Engine</li>
+<li>AI Voice Agent (answers your phone)</li>
+<li>Full online booking automation</li>
+<li>Patient reactivation campaigns</li>
+<li>60-second lead follow-up system</li>
+<li>Calendar integration + reminders</li>
+<li>Custom AI training for your business</li>
+<li>Priority support + quarterly strategy call</li>
+</ul>
+<a href="#audit" class="price-btn gold">Start With an Audit</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- AUDIT CTA -->
+<section class="audit-section" id="audit">
+<div class="section-inner">
+<div class="audit-box">
+<div class="section-tag">// start here</div>
+<h2>Get Your Business Health Audit</h2>
+<div class="audit-price">$97</div>
+<div class="audit-credit">100% credited toward your first month if you sign up within 14 days</div>
+<p class="audit-details">We audit your Google reviews, your website responsiveness, your follow-up speed, and your online visibility against your local competitors. You get a detailed report showing exactly where you are losing patients and what to fix. Takes 20 minutes on Zoom.</p>
+<a href="https://calendly.com/connorwithhonor/scvreviews-audit" class="btn-primary" target="_blank" rel="noopener">Book Your Audit Now ></a>
+<p style="margin-top:1rem;font-size:.75rem;color:var(--text-dim)">Audit fee collected after booking confirmation. Fully applied to setup if you become a client.</p>
+</div>
+</div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section>
+<div class="section-inner">
+<div class="section-tag">// results</div>
+<h2 class="section-title">What SCV businesses are saying.</h2>
+<p class="section-sub">Real results from real local businesses using our automation systems.</p>
+<div class="proof-grid">
+<div class="proof-card">
+<div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p class="proof-text">"We went from 14 Google reviews to 87 in three months. We did not change anything about how we run our practice. The system just made it easy for patients to review us."</p>
+<p class="proof-name">Local Dental Practice</p>
+<p class="proof-biz">Santa Clarita Valley</p>
+</div>
+<div class="proof-card">
+<div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p class="proof-text">"The AI chat on our website captured 23 leads in the first month that we would have completely missed. Most came in after hours when our office was closed."</p>
+<p class="proof-name">Home Service Company</p>
+<p class="proof-biz">Valencia, CA</p>
+</div>
+<div class="proof-card">
+<div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p class="proof-text">"Connor understands local business. He is not some agency in another state reading a script. He is here in SCV and he built something that actually works for us."</p>
+<p class="proof-name">Service Professional</p>
+<p class="proof-biz">Canyon Country, CA</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="problems" id="faq">
+<div class="section-inner">
+<div class="section-tag">// faq</div>
+<h2 class="section-title">Common questions.</h2>
+<div style="max-width:700px">
+<div class="faq-item">
+<div class="faq-q">How long before I see more reviews coming in?</div>
+<div class="faq-a">Most businesses see their first automated reviews within the first week after setup. Significant review velocity improvement (2-3x your current rate) typically happens within 30-60 days.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do I need to change my website?</div>
+<div class="faq-a">No. We add our tools to your existing site. A small chat widget. A booking button. Review links. Everything integrates with what you already have. If your site needs work, we can discuss that separately.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What if I get a negative review?</div>
+<div class="faq-a">Our system routes unhappy patients to a private feedback form before they ever reach Google. You get alerted instantly and can resolve the issue personally. This prevents most negative reviews from ever being posted.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is there a contract?</div>
+<div class="faq-a">No long-term contracts. Month to month. If the system is not delivering value, you can cancel anytime. We keep clients by getting results, not by locking them in.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the $97 audit?</div>
+<div class="faq-a">It is a comprehensive review of your online presence: Google reviews, website responsiveness, follow-up speed, and competitive positioning. You receive a detailed report showing exactly where you are losing business. If you sign up as a client within 14 days, the $97 is credited toward your first month.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do you work with businesses outside of dental?</div>
+<div class="faq-a">Yes. Our system works for any service-based business that depends on local reputation: HVAC, plumbing, med spas, legal, financial services, home services, and more. The technology is the same. We customize the setup for your industry.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">SCV<span>Reviews</span></div>
+<p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1rem">AI-powered reputation management for Santa Clarita Valley businesses.</p>
+<div class="footer-links">
+<a href="#problems">The Problem</a>
+<a href="#solutions">Solutions</a>
+<a href="#pricing">Pricing</a>
+<a href="#audit">Get Your Audit</a>
+<a href="https://honorelevate.com">HonorElevate</a>
+<a href="https://connorwithhonor.com">ConnorWithHonor</a>
+</div>
+<p style="font-size:.85rem;color:var(--text-dim);margin-top:1.5rem">
+Connor MacIvor | AI Growth Architect<br>
+<a href="tel:6614001720">661-400-1720</a> | <a href="mailto:connor@scvreviews.com">connor@scvreviews.com</a>
+</p>
+<p class="footer-legal">
+&copy; 2026 SCV Reviews. All rights reserved.<br>
+Coded by Connor with Honor | <a href="https://honorelevate.com">AI Growth Architect</a><br>
+Santa Clarita, California
+</p>
+</div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+<a href="#audit">Get Your $97 Business Audit ></a>
+</div>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>{
+q.addEventListener('click',()=>{
+q.classList.toggle('open');
+q.nextElementSibling.classList.toggle('open');
+});
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+a.addEventListener('click',e=>{
+e.preventDefault();
+const t=document.querySelector(a.getAttribute('href'));
+if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+});
+});
+</script>
+
+</body>
+</html>
